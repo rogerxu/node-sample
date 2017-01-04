@@ -1,19 +1,33 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use((req, res, next) => {
-  console.log(`${req.method} request for '${req.url}'`);
+  console.log(`${req.method} request for '${req.url}' - ${JSON.stringify(req.body)}`);
   next();
 });
 
 app.use(express.static('./public'));
 app.use(cors());
 
-const items = [];
+let items = [];
 
 app.get('/api', (req, res) => {
+  res.json(items);
+});
+
+app.post('/api', (req, res) => {
+  items.push(req.body);
+  res.json(items);
+});
+
+app.delete('/api/:id', (req, res) => {
+  items = items.filter(item => item.id.toLowerCase() !== req.params.id.toLowerCase());
   res.json(items);
 });
 
