@@ -6,6 +6,12 @@
   "repository": "https://github.com/rogerxu/node-demo.git",
   "author": "Roger Xu <roger.xu.2007@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "lodash": "^4.17.4"
+  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
