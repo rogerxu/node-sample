@@ -2,12 +2,19 @@ const express = require('express');
 
 const app = express();
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   console.log(`${req.method} request for '${req.url}'`);
   next();
 });
 
 app.use(express.static('./public'));
+
+
+const items = [];
+
+app.get('/api', (req, res) => {
+  res.json(items);
+});
 
 app.listen(8080);
 
