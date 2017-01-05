@@ -1,21 +1,20 @@
 /* eslint-env browser */
-const ws = new WebSocket('ws://localhost:3000');
+const socket = io('htpp://localhost:3000');
 
-ws.onopen = () => {
+socket.on('connect', () => {
   setStatus('CONNECTED');
-};
+});
 
-ws.onclose = () => {
+socket.on('disconnect', () => {
   setStatus('DISCONNECTED');
-};
+});
 
-ws.onmessage = (payload) => {
-  console.log('Message:', payload.data);
-  printMessage(payload.data);
-};
+socket.on('message', (message) => {
+  printMessage(message);
+});
 
 function sendMessage(message) {
-  ws.send(message);
+  socket.emit('chat', message);
 }
 
 function setStatus(status) {

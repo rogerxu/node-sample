@@ -5,13 +5,16 @@
     <title>Welcome</title>
   </head>
   <body>
-    <article>
+    <article class="">
       <header>
-        <h1>Welcome</h1>
+        <h1>Chat Room</h1>
+        <h2 id="status"></h2>
       </header>
-      <section>
-        <p>Hello World</p>
+      <section id="messages">
       </section>
     </article>
+
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
