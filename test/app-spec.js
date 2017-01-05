@@ -1,13 +1,19 @@
 const request = require('supertest');
 const chai = require('chai');
 const rewire = require('rewire');
+const cheerio = require('cheerio');
 
 const expect = chai.expect;
 const app = rewire('../app');
 
 describe('App', function () {
   it('Loads the home page', function (done) {
-    request(app).get('/').expect(200).end(done);
+    request(app).get('/').expect(200).end((err, res) => {
+      let $ = cheerio.load(res.text);
+      let pageHeading = $('body h1:first-child').text();
+      expect(pageHeading).to.equal('Chat');
+      done();
+    });
   });
 
   describe("API", function () {
