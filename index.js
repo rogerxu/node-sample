@@ -31,7 +31,7 @@ app.delete('/api/:id', (req, res) => {
   res.json(items);
 });
 
-app.listen(8080);
+app.listen(3000);
 
 console.log('Express app running on port 8080');
 
