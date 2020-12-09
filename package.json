@@ -2,13 +2,13 @@
   "name": "node-demo",
   "version": "1.0.0",
   "description": "Node.js Demo",
-  "main": "index.js",
   "repository": "https://github.com/rogerxu/node-demo.git",
-  "author": "Roger Xu <roger.xu.2007@gmail.com>",
   "license": "MIT",
+  "author": "Roger Xu <roger.xu.2007@gmail.com>",
+  "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha"
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "test": "mocha"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -30,6 +30,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^8.2.1",
     "nock": "^13.0.5",
+    "prettier": "^2.2.1",
+    "prettier-plugin-packagejson": "^2.2.8",
     "rewire": "^5.0.0",
     "sinon": "^9.2.1",
     "supertest": "^6.0.1"
