@@ -3,7 +3,9 @@
     [
       "@babel/env",
       {
-        "targets": {},
+        "targets": {
+          "node": "current"
+        },
         "useBuiltIns": "usage",
         "corejs": "3.6.5"
       }
