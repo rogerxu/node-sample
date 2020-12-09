@@ -2,10 +2,10 @@ module.exports = {
   root: true,
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module",
   },
   env: {
     mocha: true,
+    node: true,
   },
   extends: "eslint:recommended",
   rules: {
