@@ -7,7 +7,7 @@
   "author": "Roger Xu <roger.xu.2007@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
